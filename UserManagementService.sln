@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserManagement.API", "UserManagementAPI\UserManagement.API.csproj", "{6509A6F9-A16B-47CF-908C-A496710A86D1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserManagement.Service", "UserManagement.Service\UserManagement.Service.csproj", "{8E979E09-468C-4FB6-8DB0-A54092B107B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserManagement.Core", "UserManagement.Core\UserManagement.Core.csproj", "{C2499FC9-90D7-4C6E-9621-2368AF7EDA84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserManagement.SQLDbRepo", "SQLDbRepo\UserManagement.SQLDbRepo.csproj", "{9E1CFBFD-D4B8-4FB6-BA11-4ADD8ACAB7B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserManagement.EfDbRepo", "EfDbRepo\UserManagement.EfDbRepo.csproj", "{0121C238-7341-4C04-AD2D-8E4422C3660B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HangFire", "HangFire", "{CB14FD18-0D88-455E-9317-E0676D40A800}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HangFire.WorkerService", "HangFire.WorkerService\HangFire.WorkerService.csproj", "{A64E5D76-59A5-423D-BDE8-4B850DD24C80}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6509A6F9-A16B-47CF-908C-A496710A86D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6509A6F9-A16B-47CF-908C-A496710A86D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6509A6F9-A16B-47CF-908C-A496710A86D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6509A6F9-A16B-47CF-908C-A496710A86D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E979E09-468C-4FB6-8DB0-A54092B107B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E979E09-468C-4FB6-8DB0-A54092B107B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E979E09-468C-4FB6-8DB0-A54092B107B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E979E09-468C-4FB6-8DB0-A54092B107B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2499FC9-90D7-4C6E-9621-2368AF7EDA84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2499FC9-90D7-4C6E-9621-2368AF7EDA84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2499FC9-90D7-4C6E-9621-2368AF7EDA84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2499FC9-90D7-4C6E-9621-2368AF7EDA84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E1CFBFD-D4B8-4FB6-BA11-4ADD8ACAB7B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E1CFBFD-D4B8-4FB6-BA11-4ADD8ACAB7B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E1CFBFD-D4B8-4FB6-BA11-4ADD8ACAB7B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E1CFBFD-D4B8-4FB6-BA11-4ADD8ACAB7B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0121C238-7341-4C04-AD2D-8E4422C3660B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0121C238-7341-4C04-AD2D-8E4422C3660B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0121C238-7341-4C04-AD2D-8E4422C3660B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0121C238-7341-4C04-AD2D-8E4422C3660B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A64E5D76-59A5-423D-BDE8-4B850DD24C80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A64E5D76-59A5-423D-BDE8-4B850DD24C80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A64E5D76-59A5-423D-BDE8-4B850DD24C80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A64E5D76-59A5-423D-BDE8-4B850DD24C80}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A64E5D76-59A5-423D-BDE8-4B850DD24C80} = {CB14FD18-0D88-455E-9317-E0676D40A800}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {85E81BED-AE04-4B4D-A313-7F0E2061A127}
+	EndGlobalSection
+EndGlobal
