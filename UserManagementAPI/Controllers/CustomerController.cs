@@ -14,7 +14,7 @@ using UserManagement.Service.Email;
 
 [Route("api/[controller]")]
 [ApiController]
-//[Authorize(Roles = "Admin, Users")]
+[Authorize(Roles = "Admin, Users")]
 public class CustomerController : ControllerBase
 {
     private readonly ICustomerService _customerService;
