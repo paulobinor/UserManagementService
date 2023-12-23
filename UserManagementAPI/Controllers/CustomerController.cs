@@ -1,16 +1,7 @@
-// Controllers/CustomerController.cs
-using Hangfire;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Extensions;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using UserManagement.Core.Enums;
 using UserManagement.Core.Interfaces;
 using UserManagement.Core.Models;
-using UserManagement.Service.Email;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -36,7 +27,7 @@ public class CustomerController : ControllerBase
 
     [HttpGet]
     [Route("Orders")]
-    public async Task<ActionResult<Customer>> GetOrders()
+    public async Task<ActionResult<Order>> GetOrders()
     {
         return Ok(await _customerService.Orders());
     }
@@ -45,7 +36,7 @@ public class CustomerController : ControllerBase
     [HttpPost]
     [Route("Customers/Add")]
     [Authorize(Roles = "Admin")]
-    public async Task<ActionResult<Customer>> AddCustomer(Customer customer)
+    public async Task<ActionResult> AddCustomer(Customer customer)
     {
         var newCustomer = await _customerService.AddNewCustomer(customer);
 

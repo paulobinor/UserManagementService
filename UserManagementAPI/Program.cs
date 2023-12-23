@@ -12,6 +12,7 @@ using UserManagement.Service.Repository;
 using UserManagement.Core.Interfaces;
 using UserManagement.EfDbRepo;
 using UserManagement.Service.Email;
+using System.Security.Cryptography.Xml;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -57,6 +58,33 @@ builder.Services.AddControllers();
 
 
 #region JWT Authentication Services
+builder.Services.AddSwaggerGen(option =>
+{
+    option.SwaggerDoc("v1", new OpenApiInfo { Title = "Demo API", Version = "v1" });
+    option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        In = ParameterLocation.Header,
+        Description = "Please enter a valid token",
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        BearerFormat = "JWT",
+        Scheme = "Bearer"
+    });
+    option.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type=ReferenceType.SecurityScheme,
+                    Id="Bearer"
+                }
+            },
+            new string[]{}
+        }
+    });
+});
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -89,7 +117,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-
 app.UseHangfireDashboard(@"/HangFire", new DashboardOptions
 {
     Authorization = new[]
@@ -102,11 +129,10 @@ app.UseHangfireDashboard(@"/HangFire", new DashboardOptions
     }
 });
 app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
+app.UseStaticFiles();
+app.UseRouting();
 app.UseAuthentication();
-
+app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
